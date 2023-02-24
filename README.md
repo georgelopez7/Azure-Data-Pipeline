@@ -106,7 +106,7 @@ Azure's Text Analytics is a powerful natural language processing tool that provi
 
 Below you can see the structure of the tables and how they were linked:
 
-"INSERT ER DIAGRAM HERE"
+![Blank diagram (3)](https://user-images.githubusercontent.com/71076769/221165120-349a78ca-9725-4495-b3d9-a06318a02248.svg)
 
 [Back To The Top](#azure-functions)
 
@@ -123,7 +123,7 @@ This allowed a continously updating flow of Reddit data to be analysed and passe
 
 Below you can see the flow of execution of this Azure function:
 
-"INSERT TIMER DIAGRAM HERE"
+![Blank diagram (4)](https://user-images.githubusercontent.com/71076769/221165149-f674a376-7cb2-4521-a64c-ba69d60718e1.svg)
 
 [Back To The Top](#azure-functions)
 
