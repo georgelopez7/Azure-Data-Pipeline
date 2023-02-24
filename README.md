@@ -10,7 +10,7 @@ You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
 - [What is an Azure Function](#what-is-an-azure-function)
-- [Python Script: Reddit](#python-script--reddit)
+- [Python Script: Reddit](#python-script-reddit)
 - [Sentiment Analysis](#sentiment-analysis)
 - [SQL Database](#sql-database)
 - [Timer Trigger](#timer-trigger)
