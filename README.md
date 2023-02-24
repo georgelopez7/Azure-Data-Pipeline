@@ -1,5 +1,8 @@
 # Azure Functions
 
+![Project Image](project-image-url)
+
+
 ---
 
 ### Table of Contents
@@ -63,7 +66,8 @@ Finally the data was stored in several tables in an SQL database and analysed us
 
 ## What is an Azure Function
 
-An Azure Function is a serverless computing service that allows developers to run small pieces of code or functions in the cloud without having to manage any infrastructure. These functions can be triggered in response to events such as changes in data, timer-based schedules, or messages from other services. Azure Functions are highly scalable and cost-effective as developers only pay for the amount of time their code runs. Additionally, Azure Functions supports a variety of programming languages and integrates with other Azure services, allowing developers to build complex workflows and applications quickly and easily.
+An Azure Function is a serverless computing service that allows developers to run small pieces of code or functions in the cloud without having to manage any infrastructure. These functions can be triggered in response to events such as changes in data, timer-based schedules, or messages from other services. In this case we used a timer trigger to execute the code on a regular interval.
+
 
 [Back To The Top](#azure-functions)
 
@@ -91,7 +95,9 @@ To find the python script used go to **reddit_to_sql_trigger / __init__.py** in 
 
 ## Azure Text Analytics Tool
 
-Azure's Text Analytics is a powerful natural language processing tool that provides sentiment analysis, key phrase extraction, and language detection. It uses advanced machine learning algorithms to identify and extract valuable insights from textual data in real-time. Sentiment analysis is a particularly useful feature of Text Analytics, as it can be used to gauge the emotional tone of social media posts, customer reviews, and other types of textual content. By analyzing sentiment, businesses can gain a deeper understanding of customer perceptions and make more informed decisions based on that knowledge. Overall, Azure's Text Analytics is an excellent tool for anyone looking to extract valuable insights from textual data quickly and easily.
+Azure's Text Analytics is a powerful natural language processing tool that provides sentiment analysis, key phrase extraction, and language detection. 
+
+This tool was used to extract valuable insights from the content of the Reddit posts and evaluate their sentiment scores to gauge any emotional tone towards the topic of the content.
 
 [Back To The Top](#azure-functions)
 
@@ -99,11 +105,11 @@ Azure's Text Analytics is a powerful natural language processing tool that provi
 
 ## SQL Database
 
-Azure's Text Analytics is a powerful natural language processing tool that provides sentiment analysis, key phrase extraction, and language detection. It uses advanced machine learning algorithms to identify and extract valuable insights from textual data in real-time. Sentiment analysis is a particularly useful feature of Text Analytics, as it can be used to gauge the emotional tone of social media posts, customer reviews, and other types of textual content. By analyzing sentiment, businesses can gain a deeper understanding of customer perceptions and make more informed decisions based on that knowledge. Overall, Azure's Text Analytics is an excellent tool for anyone looking to extract valuable insights from textual data quickly and easily.
+After conducting sentiment analysis the scores were stored in a table seperate from the metadata of the post but linked of their **doc_id** which relates to the id of the reddit post.
 
-Below you can see the structure of the tables and how they were linked:
+Below you can see the ER (Entity-Relationship) Diagram of the database:
 
-![Blank diagram (3)](https://user-images.githubusercontent.com/71076769/221165120-349a78ca-9725-4495-b3d9-a06318a02248.svg)
+![Blank diagram (3)](https://user-images.githubusercontent.com/71076769/221166977-69c3ca02-8444-4bcd-8d9b-9c540692fb8e.svg)
 
 [Back To The Top](#azure-functions)
 
@@ -120,7 +126,7 @@ This allowed a continously updating flow of Reddit data to be analysed and passe
 
 Below you can see the flow of execution of this Azure function:
 
-![Blank diagram (4)](https://user-images.githubusercontent.com/71076769/221165149-f674a376-7cb2-4521-a64c-ba69d60718e1.svg)
+![Blank diagram (4)](https://user-images.githubusercontent.com/71076769/221167017-dc4a3dba-6ab7-40a5-b22c-46dacbe9b304.svg)
 
 [Back To The Top](#azure-functions)
 
