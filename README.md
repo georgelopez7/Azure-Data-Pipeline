@@ -1,8 +1,5 @@
 # Azure Functions
 
-![Project Image](project-image-url)
-
-
 ---
 
 ### Table of Contents
