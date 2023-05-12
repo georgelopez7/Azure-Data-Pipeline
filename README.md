@@ -17,9 +17,9 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-In this repository, you will find out about my experience with Azure Functions and how we leveraged it to scrape Reddit posts using the Reddit API in Python. In addition, I set a timer to execute the function at a set interval, and as a result stream real time data from Reddit. 
+In this repository, you will find out about my experience with Azure Functions and how it was leveraged to scrape Reddit posts using the Reddit API in Python. In addition, a timer was set to execute the function at a set interval, and as a result stream real time data from Reddit into an Azure SQL database. 
 
-The content from the Reddit postss were parsed through Azure's Text Analytics tool which conducts sentiment analysis on text. This was used to gather the sentiment from each Reddit post.
+The content from the Reddit postss were parsed through Azure's Text Analytics tool which conducted sentiment analysis on text. This was used to gather the sentiment from each Reddit post.
 
 Finally the data was stored in several tables in an SQL database and analysed using Power BI.
 
@@ -32,7 +32,7 @@ Finally the data was stored in several tables in an SQL database and analysed us
 
         Used to connect to the Reddit API and retreive posts
 
-    - **azure.functions**  package
+    - **azure.functions** package
 
         Used to create azure functions in VSC
 
@@ -56,6 +56,14 @@ Finally the data was stored in several tables in an SQL database and analysed us
 
     Used to host the Azure function and SQL database
 
+- SQL
+
+    Used to store the data
+
+- Power BI
+
+    Used to create dashboards of the data
+
 
 [Back To The Top](#azure-functions)
 
@@ -76,7 +84,7 @@ This Python script scrapes Reddit posts based on certain parameters. The paramet
 
 - **subreedit** - a user defined subreddit
 
-- **title** - user can decide if they want to search for any speciifc words or phrases in the reddit post title
+- **title** - user can decide if they want to search for any specific words or phrases in the reddit post title
 
 - **flair** - user can decide which flair they would like to filter
 
@@ -114,7 +122,7 @@ Below you can see the ER (Entity-Relationship) Diagram of the database:
 
 ## Timer Trigger
 
-As mentioned previously I used a timer trigger as part of this Azure function to schedule the execution of the code at a specific interval. This can be easily changed and is denoted as a CRON expression. 
+As mentioned previously a timer trigger was used as part of this Azure function to schedule the execution of the code at a specific interval. This can be easily changed and is denoted as a CRON expression. 
 For example:
 
 `0 */15 * * * *` - denotes an interval of 15 minutes.
