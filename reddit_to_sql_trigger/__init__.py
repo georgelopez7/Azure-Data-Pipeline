@@ -22,8 +22,8 @@ def main(mytimer: func.TimerRequest) -> None:
     # --------------------------------------------------------------------------------
     # Email Confirmation
     def email_send(body):
-        sender = "george.benjamin.lopez@gmail.com"
-        recipient = "bluegeorge64@gmail.com"
+        sender = "<email-of-sender>"
+        recipient = "<email-of-recipient>"
 
         msg = MIMEText(body)
         msg["Subject"] = "Running script in Python"
@@ -33,14 +33,14 @@ def main(mytimer: func.TimerRequest) -> None:
         with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
             smtp.ehlo()
             smtp.starttls()
-            smtp.login("george.benjamin.lopez@gmail.com", "mwosovmfocqspvbq")
+            smtp.login("<email-of-sender>", "<email-password>")
             smtp.sendmail(sender, [recipient], msg.as_string())
     # --------------------------------------------------------------------------------
     def getposts(subreddit_name, flair_filter=None, title_filter=None, limit=None):
         # create a Reddit instance with PRAW
         reddit = praw.Reddit(
-            client_id='4IcLjw9E9TbPTPpOnc-M_Q',
-            client_secret='NTu5313D8iuuLu7j3jVyeBBYblIerA',
+            client_id='client-id',
+            client_secret='client-secret',
             user_agent='your_user_agent')
 
         # get the subreddit object
@@ -88,7 +88,7 @@ def main(mytimer: func.TimerRequest) -> None:
         return filtered_posts_df, filtered_posts
 
     def sentiment_analysis(list_of_dicts):
-        credential = AzureKeyCredential('bc242110096b4fa1af0cbccf322d50ae')
+        credential = AzureKeyCredential('<azure-credentials>')
         text_analytics_client = TextAnalyticsClient(endpoint = 'https://reddit-sentiment-analysis.cognitiveservices.azure.com/', credential = credential)
 
         # Iterate through documents as azure limits to 10 documents per request
@@ -133,10 +133,10 @@ def main(mytimer: func.TimerRequest) -> None:
         
         # Upload to Azure SQL Database
 
-        server = 'tcp:reddit-data-server.database.windows.net'
-        database = 'reddit-database'
-        username = 'gladmin'
-        password = '{Tomosisdumb!}'   
+        server = '<azure-server>'
+        database = '<azure-database-name>'
+        username = '<server-username>'
+        password = '<sever-password>'   
         driver= '{ODBC Driver 17 for SQL Server}'
 
 
@@ -203,8 +203,6 @@ def main(mytimer: func.TimerRequest) -> None:
         "openai",
         "gpt3",
         "gpt4"
-
-        
     ]
 
     for book in book_list:
